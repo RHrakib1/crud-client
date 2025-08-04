@@ -10,6 +10,16 @@ function App() {
     const email = adddata.email.value
     const objdata = { name, email }
     console.log(objdata)
+
+    fetch('http://localhost:5000/datauser', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(objdata)
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
   }
 
 
