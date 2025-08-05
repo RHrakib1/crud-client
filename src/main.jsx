@@ -6,12 +6,19 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Readdata from './Component/Readdata/Readdata.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>
+    element: <App />,
+
   },
+  {
+    path: '/user',
+    element: <Readdata />,
+    loader: () => fetch('http://localhost:5000/getdata')
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(

@@ -19,8 +19,14 @@ function App() {
       body: JSON.stringify(objdata)
     })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => {
+        console.log(data)
+        if (data.acknowledged) {
+          alert('data paisi')
+        }
+      })
   }
+
 
 
   return (
